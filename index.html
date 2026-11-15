@@ -1,0 +1,2153 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yejarla Yaswanth Kumar | AI/ML Engineer & Intelligent Systems Specialist</title>
+  <meta name="description" content="Portfolio of Yejarla Yaswanth Kumar — AI/ML Engineer specializing in Deep Learning, Computer Vision, Natural Language Processing, and Intelligent Automation.">
+  <meta name="keywords" content="Yejarla Yaswanth Kumar, AI/ML Engineer, Machine Learning, Deep Learning, Python, NLP, PyTorch, TensorFlow, Portfolio">
+
+  <!-- Google Fonts: Cinzel (Display), Syne (Headings), Plus Jakarta Sans (Body), JetBrains Mono (Code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              primary: '#D4AF37',
+              champagne: '#F5E296',
+              bright: '#FFF3B0',
+              amber: '#B8860B',
+              dark: '#8A6510',
+            },
+            obsidian: {
+              DEFAULT: '#060608',
+              surface: '#0A0A0F',
+              elevated: '#12121A',
+            }
+          },
+          fontFamily: {
+            display: ['Cinzel', 'serif'],
+            heading: ['Syne', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#060608] text-[#EDEDF2] relative selection:bg-amber-500/30 selection:text-gold-bright">
+
+  <!-- Ambient Glow Effects -->
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+  <div class="ambient-glow ambient-glow-3"></div>
+
+  <!-- Interactive Golden Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Cyber Grid Texture Overlay -->
+  <div class="cyber-grid-overlay"></div>
+
+  <!-- Custom Cursor Elements -->
+  <div class="custom-cursor-dot"></div>
+  <div class="custom-cursor-ring"></div>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <header class="navbar-fixed">
+    <nav class="navbar-container">
+      <!-- Monogram / Brand -->
+      <a href="#home" class="nav-logo">
+        <div class="nav-logo-monogram">YK</div>
+        <div class="flex flex-col">
+          <span class="font-display font-bold text-sm tracking-wider text-white">YASWANTH</span>
+          <span class="font-mono text-[9px] text-gold-champagne tracking-widest uppercase">AI/ML ENGINEER</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Action Items & Sound Toggle -->
+      <div class="nav-actions">
+        <!-- Sound FX Button -->
+        <button id="sound-toggle-btn" class="sound-toggle-btn" aria-label="Toggle luxury audio effects">
+          <div class="sound-bars">
+            <span class="sound-bar"></span>
+            <span class="sound-bar"></span>
+            <span class="sound-bar"></span>
+          </div>
+        </button>
+
+        <!-- Resume Modal Trigger -->
+        <button class="open-resume-modal-btn hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-mono tracking-wider uppercase border border-gold-primary/30 bg-gold-primary/10 text-gold-bright hover:bg-gold-primary/20 hover:border-gold-champagne transition-all">
+          <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+          <span>Resume</span>
+        </button>
+
+        <!-- Direct Contact CTA -->
+        <a href="#contact" class="hidden md:inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-gradient-to-r from-[#D4AF37] to-[#AA771C] text-black hover:shadow-lg hover:shadow-gold-primary/30 transition-all">
+          <span>Hire Me</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+
+        <!-- Mobile Menu Hamburger -->
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle mobile menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Navigation Overlay Drawer -->
+  <div id="mobile-nav-drawer" class="mobile-nav-overlay">
+    <button id="mobile-close-btn" class="mobile-close-btn" aria-label="Close menu">
+      <i data-lucide="x" class="w-8 h-8"></i>
+    </button>
+    <ul class="mobile-nav-links">
+      <li><a href="#home" class="mobile-nav-link">Home</a></li>
+      <li><a href="#about" class="mobile-nav-link">About</a></li>
+      <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+      <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+      <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+      <li><a href="#certifications" class="mobile-nav-link">Certifications</a></li>
+      <li><a href="#education" class="mobile-nav-link">Education</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+    </ul>
+    <div class="mt-8 flex gap-4">
+      <button class="open-resume-modal-btn btn-gold-outline text-sm">
+        <i data-lucide="file-text" class="w-4 h-4"></i> View Resume
+      </button>
+      <a href="#contact" class="btn-gold-primary text-sm mobile-close-btn">
+        <i data-lucide="mail" class="w-4 h-4"></i> Get in Touch
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         SECTION 1: HOME (HERO)
+         ========================================================================== -->
+    <section id="home" class="min-h-screen pt-36 pb-20 flex items-center justify-center relative z-10 px-6">
+      <div class="max-w-5xl mx-auto text-center flex flex-col items-center">
+        
+        <!-- Live Status Pill -->
+        <div class="hero-badge-anim mb-6">
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-zinc-900/80 border border-gold-primary/30 backdrop-blur-md shadow-lg shadow-gold-primary/5">
+            <span class="status-dot-pulse"></span>
+            <span class="text-xs font-mono font-medium tracking-wider text-gold-bright uppercase">Available for AI/ML Engineering & Software Roles</span>
+          </div>
+        </div>
+
+        <!-- Name & Cinematic Title -->
+        <h1 class="hero-title-anim font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.08] mb-6">
+          <span class="block text-white">YEJARLA</span>
+          <span class="block text-gold-gradient gold-glow-filter">YASWANTH KUMAR</span>
+        </h1>
+
+        <!-- Professional Title & Introduction -->
+        <p class="hero-subtitle-anim font-heading text-lg sm:text-xl md:text-2xl text-zinc-300 font-medium tracking-wide max-w-3xl mb-4">
+          AI/ML Engineer & Software Developer <span class="text-gold-champagne font-mono text-sm block sm:inline sm:ml-2">| Content Creator @xmaster_pyhub</span>
+        </p>
+        <p class="hero-subtitle-anim text-sm sm:text-base md:text-lg text-zinc-400 max-w-2xl font-light leading-relaxed mb-10">
+          Transforming complex computational problems into resilient deep learning models, modern web applications, and educational technology with engineering precision.
+        </p>
+
+        <!-- High-Impact Key Accolades Ribbon -->
+        <div class="hero-stats-anim grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 w-full max-w-4xl mb-12">
+          <div class="stat-card">
+            <div class="stat-card-value font-mono">95.52<span class="text-xs text-gold-primary">%ile</span></div>
+            <div class="stat-card-label">Naukri Young Turks 2025</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-value font-mono">#906</div>
+            <div class="stat-card-label">AIR Common Internship Test</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-value font-mono">4+</div>
+            <div class="stat-card-label">Neural Architectures Mastered</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card-value font-mono text-lg sm:text-xl text-gold-champagne">@xmaster_pyhub</div>
+            <div class="stat-card-label">Tech Community Creator</div>
+          </div>
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="hero-btn-anim flex flex-wrap items-center justify-center gap-4">
+          <a href="#projects" class="btn-gold-primary">
+            <i data-lucide="layers" class="w-4 h-4"></i>
+            <span>Explore Engineering Systems</span>
+          </a>
+          <button class="open-resume-modal-btn btn-gold-outline">
+            <i data-lucide="file-down" class="w-4 h-4"></i>
+            <span>Preview & Download CV</span>
+          </button>
+          <a href="#contact" class="btn-gold-outline">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            <span>Direct Transmission</span>
+          </a>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="mt-16 flex flex-col items-center gap-2 opacity-60 hover:opacity-100 transition-opacity">
+          <span class="text-[10px] font-mono uppercase tracking-widest text-gold-champagne">Scroll to Discover</span>
+          <div class="w-5 h-9 rounded-full border border-gold-primary/40 flex items-start justify-center p-1">
+            <div class="w-1.5 h-2.5 rounded-full bg-gold-primary animate-bounce"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2: ABOUT ME
+         ========================================================================== -->
+    <section id="about" class="section-wrapper">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>Architect Profile</span>
+        </div>
+        <h2 class="section-title">
+          Engineering Intelligence <span class="text-gold-gradient">From The Ground Up</span>
+        </h2>
+        <p class="section-subtitle">
+          Passionate AI/ML engineer bridging mathematical theoretical rigor with scalable, production-ready machine learning solutions.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Left: Deep Profile Narrative -->
+        <div class="lg:col-span-7 space-y-6 reveal-on-scroll">
+          <div class="gold-card p-8 relative">
+            <h3 class="font-display text-2xl font-bold text-white mb-4 flex items-center gap-3">
+              <span class="text-gold-champagne">✦</span>
+              <span>The Engineering Narrative</span>
+            </h3>
+            
+            <p class="text-zinc-300 leading-relaxed text-base mb-4 font-normal">
+              I am an AI/ML Engineer driven by a deep fascination with how deep neural architectures extract meaning from high-dimensional unstructured data. My core technical expertise spans <strong class="text-gold-bright font-semibold">Deep Learning (DNN, CNN, RNN, LSTM)</strong>, <strong class="text-gold-bright font-semibold">Natural Language Processing (NLP)</strong>, <strong class="text-gold-bright font-semibold">Computer Vision</strong>, and <strong class="text-gold-bright font-semibold">Full-Cycle Data Science</strong>.
+            </p>
+
+            <p class="text-zinc-400 leading-relaxed text-sm mb-4">
+              With a strong grounding in Computer Science and Engineering from Dr Paul Raj Engineering College (JNTUK), I combine algorithmic discipline with hands-on proficiency in <span class="text-zinc-200 font-mono">Python, TensorFlow, PyTorch, Pandas, NumPy, and Selenium</span>. My work focuses on building intelligent conversational agents, diagnostic predictive frameworks, and robust automated workflows that solve real-world problems.
+            </p>
+
+            <p class="text-zinc-400 leading-relaxed text-sm">
+              Whether architecting temporal LSTM sentiment models for youth mental wellness or implementing automated correlation engines on complex multivariate datasets, I approach engineering with a relentless focus on <strong class="text-zinc-200">code quality, mathematical rigor, and measurable impact</strong>.
+            </p>
+
+            <!-- Quick Meta Points -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 mt-6 border-t border-white/10 text-xs">
+              <div>
+                <span class="text-zinc-500 block uppercase font-mono tracking-wider">Education</span>
+                <span class="text-zinc-200 font-medium">B.Tech CSE (2022–2026)</span>
+              </div>
+              <div>
+                <span class="text-zinc-500 block uppercase font-mono tracking-wider">Institution</span>
+                <span class="text-zinc-200 font-medium">JNTUK Affiliated</span>
+              </div>
+              <div>
+                <span class="text-zinc-500 block uppercase font-mono tracking-wider">Location</span>
+                <span class="text-zinc-200 font-medium">India (Open to Relocate)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional Philosophy Quote -->
+          <div class="p-6 rounded-2xl bg-gradient-to-r from-gold-primary/10 via-zinc-900/60 to-transparent border-l-4 border-gold-primary backdrop-blur-md">
+            <p class="italic text-zinc-300 text-sm font-medium">
+              "True software engineering is not merely training an isolated model—it is building an entire reproducible ecosystem where data ingestion, neural inference, and user interaction operate in seamless harmony."
+            </p>
+            <span class="block mt-2 text-xs font-mono text-gold-champagne uppercase tracking-wider">— Yejarla Yaswanth Kumar</span>
+          </div>
+        </div>
+
+        <!-- Right: 4 Pillars of Competency -->
+        <div class="lg:col-span-5 space-y-4 reveal-on-scroll">
+          
+          <div class="gold-card p-6 flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-gold-primary/10 border border-gold-primary/30 flex items-center justify-center text-gold-champagne flex-shrink-0 text-xl">
+              <i data-lucide="cpu" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h4 class="font-heading font-bold text-white text-base mb-1">Deep Neural Architectures</h4>
+              <p class="text-zinc-400 text-xs leading-relaxed">
+                Expertise in designing, tuning, and deploying DNNs, CNNs, RNNs, and LSTMs for time-series sequences and pattern recognition.
+              </p>
+            </div>
+          </div>
+
+          <div class="gold-card p-6 flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-gold-primary/10 border border-gold-primary/30 flex items-center justify-center text-gold-champagne flex-shrink-0 text-xl">
+              <i data-lucide="message-square" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h4 class="font-heading font-bold text-white text-base mb-1">NLP & Conversational Systems</h4>
+              <p class="text-zinc-400 text-xs leading-relaxed">
+                Tokenization, sentiment polarity, entity extraction, and contextual chatbot flows using NLTK and modern linguistics pipelines.
+              </p>
+            </div>
+          </div>
+
+          <div class="gold-card p-6 flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-gold-primary/10 border border-gold-primary/30 flex items-center justify-center text-gold-champagne flex-shrink-0 text-xl">
+              <i data-lucide="bot" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h4 class="font-heading font-bold text-white text-base mb-1">Automated Systems & Scraping</h4>
+              <p class="text-zinc-400 text-xs leading-relaxed">
+                Workflow automation using Python, Selenium, and scheduled daemons to eliminate human bottlenecks in data operations.
+              </p>
+            </div>
+          </div>
+
+          <div class="gold-card p-6 flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-gold-primary/10 border border-gold-primary/30 flex items-center justify-center text-gold-champagne flex-shrink-0 text-xl">
+              <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h4 class="font-heading font-bold text-white text-base mb-1">Data Science & Statistical EDA</h4>
+              <p class="text-zinc-400 text-xs leading-relaxed">
+                Multivariate exploratory data analysis, correlation engines, and publication-ready visualizations with Pandas, NumPy, and Seaborn.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 3: TECHNICAL SKILLS
+         ========================================================================== -->
+    <section id="skills" class="section-wrapper">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>Technical Arsenal</span>
+        </div>
+        <h2 class="section-title">
+          Specialized Skills & <span class="text-gold-gradient">Capabilities</span>
+        </h2>
+        <p class="section-subtitle">
+          Categorized technical skills derived from production internships, academic projects, and continuous competitive benchmarking.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="skill-tabs-nav reveal-on-scroll">
+        <button class="skill-tab-btn active" data-filter="all">All Disciplines</button>
+        <button class="skill-tab-btn" data-filter="ml-ai">Machine Learning & AI</button>
+        <button class="skill-tab-btn" data-filter="prog">Programming & Core</button>
+        <button class="skill-tab-btn" data-filter="data-science">Data Science & Analytics</button>
+        <button class="skill-tab-btn" data-filter="automation">Automation & Tools</button>
+        <button class="skill-tab-btn" data-filter="soft">Leadership & Soft Skills</button>
+      </div>
+
+      <!-- Skill Cards Grid -->
+      <div class="stagger-card-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- 1. Deep Learning & Neural Networks -->
+        <div class="skill-card skill-card-item" data-category="ml-ai">
+          <div>
+            <div class="skill-card-icon">
+              <i data-lucide="network" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[11px] font-mono text-gold-champagne uppercase tracking-wider block mb-1">Deep Learning</span>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">Neural Networks (DNN, CNN, RNN, LSTM)</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed">
+              Formulation of multi-layered feedforward networks, convolutional filters for visual tasks, and recurrent LSTM cells for temporal sequence analysis.
+            </p>
+          </div>
+          <div>
+            <div class="flex justify-between items-center text-xs font-mono text-zinc-400 mt-4">
+              <span>Architectural Depth</span>
+              <span class="text-gold-bright font-bold">92%</span>
+            </div>
+            <div class="skill-level-bar">
+              <div class="skill-level-fill" style="width: 92%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Natural Language Processing (NLP) -->
+        <div class="skill-card skill-card-item" data-category="ml-ai">
+          <div>
+            <div class="skill-card-icon">
+              <i data-lucide="binary" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[11px] font-mono text-gold-champagne uppercase tracking-wider block mb-1">Linguistics & Text</span>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">Natural Language Processing (NLP)</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed">
+              Tokenization, lemmatization, stop-word elimination, sentiment polarity scoring, behavioral feature extraction, and conversational intent routing.
+            </p>
+          </div>
+          <div>
+            <div class="flex justify-between items-center text-xs font-mono text-zinc-400 mt-4">
+              <span>Text Pipelines</span>
+              <span class="text-gold-bright font-bold">94%</span>
+            </div>
+            <div class="skill-level-bar">
+              <div class="skill-level-fill" style="width: 94%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Computer Vision -->
+        <div class="skill-card skill-card-item" data-category="ml-ai">
+          <div>
+            <div class="skill-card-icon">
+              <i data-lucide="eye" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[11px] font-mono text-gold-champagne uppercase tracking-wider block mb-1">Perception</span>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">Computer Vision & Feature Engineering</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed">
+              Image array manipulation, spatial feature extraction, normalization matrices, convolutional processing, and visual data preprocessing.
+            </p>
+          </div>
+          <div>
+            <div class="flex justify-between items-center text-xs font-mono text-zinc-400 mt-4">
+              <span>Visual Processing</span>
+              <span class="text-gold-bright font-bold">86%</span>
+            </div>
+            <div class="skill-level-bar">
+              <div class="skill-level-fill" style="width: 86%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Python Ecosystem -->
+        <div class="skill-card skill-card-item" data-category="prog">
+          <div>
+            <div class="skill-card-icon">
+              <i data-lucide="code-2" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[11px] font-mono text-gold-champagne uppercase tracking-wider block mb-1">Core Language</span>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">Python (NumPy, Pandas, Seaborn)</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed">
+              High-performance vectorized operations, data frame transformations, statistical aggregations, automation scripts, and object-oriented design.
+            </p>
+          </div>
+          <div>
+            <div class="flex justify-between items-center text-xs font-mono text-zinc-400 mt-4">
+              <span>Ecosystem Mastery</span>
+              <span class="text-gold-bright font-bold">95%</span>
+            </div>
+            <div class="skill-level-bar">
+              <div class="skill-level-fill" style="width: 95%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Frameworks: TensorFlow & PyTorch -->
+        <div class="skill-card skill-card-item" data-category="ml-ai">
+          <div>
+            <div class="skill-card-icon">
+              <i data-lucide="layers" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[11px] font-mono text-gold-champagne uppercase tracking-wider block mb-1">Frameworks</span>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">TensorFlow & PyTorch</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed">
+              Constructing tensor computation graphs, gradient descent optimization, loss function tailoring, and model export for deployment.
+            </p>
+          </div>
+          <div>
+            <div class="flex justify-between items-center text-xs font-mono text-zinc-400 mt-4">
+              <span>Frameworks</span>
+              <span class="text-gold-bright font-bold">88%</span>
+            </div>
+            <div class="skill-level-bar">
+              <div class="skill-level-fill" style="width: 88%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. SQL & Database Management -->
+        <div class="skill-card skill-card-item" data-category="prog">
+          <div>
+            <div class="skill-card-icon">
+              <i data-lucide="database" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[11px] font-mono text-gold-champagne uppercase tracking-wider block mb-1">Data Storage</span>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">SQL & Relational DBMS</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed">
+              Complex joins, aggregations, schema design, index tuning, data normalization, and database transaction consistency.
+            </p>
+          </div>
+          <div>
+            <div class="flex justify-between items-center text-xs font-mono text-zinc-400 mt-4">
+              <span>Database Querying</span>
+              <span class="text-gold-bright font-bold">87%</span>
+            </div>
+            <div class="skill-level-bar">
+              <div class="skill-level-fill" style="width: 87%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Exploratory Data Analysis & Analytics -->
+        <div class="skill-card skill-card-item" data-category="data-science">
+          <div>
+            <div class="skill-card-icon">
+              <i data-lucide="line-chart" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[11px] font-mono text-gold-champagne uppercase tracking-wider block mb-1">Statistical Analytics</span>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">Exploratory Data Analysis (EDA)</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed">
+              Outlier identification, missing value imputation, multivariate distribution analysis, correlation automation, and visualization plotting.
+            </p>
+          </div>
+          <div>
+            <div class="flex justify-between items-center text-xs font-mono text-zinc-400 mt-4">
+              <span>EDA & Feature Engineering</span>
+              <span class="text-gold-bright font-bold">93%</span>
+            </div>
+            <div class="skill-level-bar">
+              <div class="skill-level-fill" style="width: 93%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Workflow Automation & Selenium -->
+        <div class="skill-card skill-card-item" data-category="automation">
+          <div>
+            <div class="skill-card-icon">
+              <i data-lucide="terminal" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[11px] font-mono text-gold-champagne uppercase tracking-wider block mb-1">Robotics & Automation</span>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">Workflow Automation & Selenium</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed">
+              Headless browser automation, dynamic DOM manipulation, scheduled task execution, automated report generation, and data scraping.
+            </p>
+          </div>
+          <div>
+            <div class="flex justify-between items-center text-xs font-mono text-zinc-400 mt-4">
+              <span>Automation Efficiency</span>
+              <span class="text-gold-bright font-bold">90%</span>
+            </div>
+            <div class="skill-level-bar">
+              <div class="skill-level-fill" style="width: 90%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Developer Tooling & Git -->
+        <div class="skill-card skill-card-item" data-category="automation">
+          <div>
+            <div class="skill-card-icon">
+              <i data-lucide="git-branch" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[11px] font-mono text-gold-champagne uppercase tracking-wider block mb-1">Tooling</span>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">GitHub & Productivity Tooling</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed">
+              Version control branching strategies, PR collaboration, Microsoft Excel analytical formulas, technical reporting, and presentations.
+            </p>
+          </div>
+          <div>
+            <div class="flex justify-between items-center text-xs font-mono text-zinc-400 mt-4">
+              <span>Tooling Integration</span>
+              <span class="text-gold-bright font-bold">91%</span>
+            </div>
+            <div class="skill-level-bar">
+              <div class="skill-level-fill" style="width: 91%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Soft Skills: Problem Solving & Leadership -->
+        <div class="skill-card skill-card-item" data-category="soft">
+          <div>
+            <div class="skill-card-icon">
+              <i data-lucide="award" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[11px] font-mono text-gold-champagne uppercase tracking-wider block mb-1">Professional Impact</span>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">Problem-Solving & Leadership</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed">
+              Analytical decomposition of ambiguous business goals, effective team communication, time management, and proactive project ownership.
+            </p>
+          </div>
+          <div>
+            <div class="flex justify-between items-center text-xs font-mono text-zinc-400 mt-4">
+              <span>Execution Mindset</span>
+              <span class="text-gold-bright font-bold">96%</span>
+            </div>
+            <div class="skill-level-bar">
+              <div class="skill-level-fill" style="width: 96%"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 4: PROJECTS (3D INTERACTIVE CARDS + LIVE AI DEMO)
+         ========================================================================== -->
+    <section id="projects" class="section-wrapper">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>Architected Systems</span>
+        </div>
+        <h2 class="section-title">
+          Featured Engineering <span class="text-gold-gradient">Projects</span>
+        </h2>
+        <p class="section-subtitle">
+          Hover over project cards for 3D perspective tilt. Click "Architecture Deep Dive" to examine full design schemas and benchmarks.
+        </p>
+      </div>
+
+      <!-- Project Filter Tabs -->
+      <div class="project-tabs-nav reveal-on-scroll">
+        <button class="project-tab-btn active" data-filter="all">All Projects</button>
+        <button class="project-tab-btn" data-filter="web-dev">Web Development</button>
+        <button class="project-tab-btn" data-filter="ai">Artificial Intelligence</button>
+        <button class="project-tab-btn" data-filter="ed-tech">Educational Technology</button>
+        <button class="project-tab-btn" data-filter="data-apps">Financial & Data Apps</button>
+      </div>
+
+      <!-- 3D Project Cards Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+
+        <!-- PROJECT 1: CODER – ONLINE CODING WEB APPLICATION -->
+        <div class="project-card-3d-wrapper project-card-filter-item reveal-on-scroll" data-category="web-dev">
+          <div class="project-card-3d">
+            <div class="card-shine"></div>
+            <div class="project-card-content flex flex-col justify-between h-full">
+              <div>
+                <!-- Top Badge & Links -->
+                <div class="flex items-center justify-between mb-4">
+                  <span class="px-3 py-1 rounded-full text-[11px] font-mono tracking-wider font-semibold bg-gold-primary/10 border border-gold-primary/30 text-gold-bright uppercase">
+                    Web Development
+                  </span>
+                  <div class="flex items-center gap-2">
+                    <a href="https://github.com/yaswanthkumaryejarla" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-300 hover:text-gold-bright hover:border-gold-primary/50 transition-colors" title="GitHub Repository">
+                      <i data-lucide="github" class="w-4 h-4"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Title & Core Tagline -->
+                <h3 class="font-display font-bold text-2xl text-white mb-2 leading-tight">
+                  Coder – Online Coding Web Application
+                </h3>
+                <p class="text-gold-champagne font-mono text-xs mb-4">
+                  Frontend: HTML, CSS, JavaScript • Backend: Python
+                </p>
+
+                <!-- Description -->
+                <p class="text-zinc-300 text-sm leading-relaxed mb-6">
+                  An interactive coding platform designed to help users practice programming, write code, and improve their problem-solving skills with instant execution feedback.
+                </p>
+
+                <!-- Key Features Bullet List -->
+                <div class="space-y-2 mb-6 text-xs text-zinc-400">
+                  <div class="flex items-start gap-2">
+                    <span class="text-gold-primary font-bold">✓</span>
+                    <span>Interactive in-browser code editor with syntax formatting and error detection.</span>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <span class="text-gold-primary font-bold">✓</span>
+                    <span>Lightweight Python backend execution engine for processing algorithmic logic.</span>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <span class="text-gold-primary font-bold">✓</span>
+                    <span>Structured problem sets designed to strengthen programming foundations and DSA.</span>
+                  </div>
+                </div>
+
+                <!-- Tech Badges -->
+                <div class="flex flex-wrap gap-2 mb-8">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Code Sandbox</span>
+                  <span class="tech-tag">Problem Solving</span>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                <button class="open-project-detail-btn btn-gold-primary text-xs py-2.5 px-4" data-project="coder">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                  <span>Architecture Deep Dive</span>
+                </button>
+                <a href="https://github.com/yaswanthkumaryejarla" target="_blank" rel="noopener noreferrer" class="btn-gold-outline text-xs py-2.5 px-4">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                  <span>GitHub Profile</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: AI PROMPT GENERATOR WEBSITE -->
+        <div class="project-card-3d-wrapper project-card-filter-item reveal-on-scroll" data-category="ai">
+          <div class="project-card-3d">
+            <div class="card-shine"></div>
+            <div class="project-card-content flex flex-col justify-between h-full">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="px-3 py-1 rounded-full text-[11px] font-mono tracking-wider font-semibold bg-gold-primary/10 border border-gold-primary/30 text-gold-bright uppercase">
+                    Artificial Intelligence
+                  </span>
+                  <div class="flex items-center gap-2">
+                    <a href="https://github.com/yaswanthkumaryejarla" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-300 hover:text-gold-bright hover:border-gold-primary/50 transition-colors" title="GitHub Repository">
+                      <i data-lucide="github" class="w-4 h-4"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <h3 class="font-display font-bold text-2xl text-white mb-2 leading-tight">
+                  AI Prompt Generator Website
+                </h3>
+                <p class="text-gold-champagne font-mono text-xs mb-4">
+                  Prompt Engineering • Multi-LLM Optimization • Web Application
+                </p>
+
+                <p class="text-zinc-300 text-sm leading-relaxed mb-6">
+                  An AI-powered website that helps users generate effective, high-precision prompts for different AI tools, LLMs, and computational tasks.
+                </p>
+
+                <div class="space-y-2 mb-6 text-xs text-zinc-400">
+                  <div class="flex items-start gap-2">
+                    <span class="text-gold-primary font-bold">✓</span>
+                    <span>Dynamic prompt engineering engine tailored for ChatGPT, Claude, Gemini, and Midjourney.</span>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <span class="text-gold-primary font-bold">✓</span>
+                    <span>Task-specific prompt templates covering code generation, debugging, and academic synthesis.</span>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <span class="text-gold-primary font-bold">✓</span>
+                    <span>Modular variable injection enabling fine-grained control over tone, output format, and constraints.</span>
+                  </div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 mb-8">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">Prompt Engineering</span>
+                  <span class="tech-tag">AI Architecture</span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                <button class="open-project-detail-btn btn-gold-primary text-xs py-2.5 px-4" data-project="ai_prompt_gen">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                  <span>Architecture Deep Dive</span>
+                </button>
+                <a href="https://github.com/yaswanthkumaryejarla" target="_blank" rel="noopener noreferrer" class="btn-gold-outline text-xs py-2.5 px-4">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                  <span>GitHub Profile</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: XMASTERPYHUB – OFFICIAL WEBSITE -->
+        <div class="project-card-3d-wrapper project-card-filter-item reveal-on-scroll" data-category="ed-tech">
+          <div class="project-card-3d">
+            <div class="card-shine"></div>
+            <div class="project-card-content flex flex-col justify-between h-full">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="px-3 py-1 rounded-full text-[11px] font-mono tracking-wider font-semibold bg-gold-primary/10 border border-gold-primary/30 text-gold-bright uppercase">
+                    Educational Technology
+                  </span>
+                  <div class="flex items-center gap-2">
+                    <a href="https://instagram.com/xmaster_pyhub" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-300 hover:text-gold-bright hover:border-gold-primary/50 transition-colors" title="Instagram Official">
+                      <i data-lucide="instagram" class="w-4 h-4"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <h3 class="font-display font-bold text-2xl text-white mb-2 leading-tight">
+                  XMasterPyHub – Official Website
+                </h3>
+                <p class="text-gold-champagne font-mono text-xs mb-4">
+                  EdTech Platform • B.Tech Study Materials • Tech Job Notifications
+                </p>
+
+                <p class="text-zinc-300 text-sm leading-relaxed mb-6">
+                  An educational platform providing free programming resources, B.Tech study materials, picture notes, roadmaps, interview preparation materials, Python, SQL, DSA resources, job notifications, R20 regulation notes, handbooks, and PPT slides.
+                </p>
+
+                <div class="space-y-2 mb-6 text-xs text-zinc-400">
+                  <div class="flex items-start gap-2">
+                    <span class="text-gold-primary font-bold">✓</span>
+                    <span>Open-access repository for B.Tech R20 regulation syllabus, handbooks, and faculty presentations.</span>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <span class="text-gold-primary font-bold">✓</span>
+                    <span>High-retention picture notes and developer roadmaps across Python, SQL, DSA, and Web Development.</span>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <span class="text-gold-primary font-bold">✓</span>
+                    <span>Daily tech job alerts, internship opportunities, and interview preparation content.</span>
+                  </div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 mb-8">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">EdTech</span>
+                  <span class="tech-tag">Picture Notes</span>
+                  <span class="tech-tag">B.Tech Hub</span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                <button class="open-project-detail-btn btn-gold-primary text-xs py-2.5 px-4" data-project="xmaster_hub">
+                  <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+                  <span>Architecture Deep Dive</span>
+                </button>
+                <a href="https://instagram.com/xmaster_pyhub" target="_blank" rel="noopener noreferrer" class="btn-gold-outline text-xs py-2.5 px-4">
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                  <span>Explore Channel</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 4: PREMIUM INTEREST CALCULATOR WEBSITE -->
+        <div class="project-card-3d-wrapper project-card-filter-item reveal-on-scroll" data-category="data-apps">
+          <div class="project-card-3d">
+            <div class="card-shine"></div>
+            <div class="project-card-content flex flex-col justify-between h-full">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="px-3 py-1 rounded-full text-[11px] font-mono tracking-wider font-semibold bg-gold-primary/10 border border-gold-primary/30 text-gold-bright uppercase">
+                    Web Application
+                  </span>
+                  <div class="flex items-center gap-2">
+                    <a href="https://github.com/yaswanthkumaryejarla" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-300 hover:text-gold-bright hover:border-gold-primary/50 transition-colors" title="GitHub Repository">
+                      <i data-lucide="github" class="w-4 h-4"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <h3 class="font-display font-bold text-2xl text-white mb-2 leading-tight">
+                  Premium Interest Calculator Website
+                </h3>
+                <p class="text-gold-champagne font-mono text-xs mb-4">
+                  Financial Analytics • Compound Interest Engine • Interactive UI
+                </p>
+
+                <p class="text-zinc-300 text-sm leading-relaxed mb-6">
+                  A modern interest calculator website with an attractive interface that helps users calculate interest, maturity amounts, and financial returns with precision.
+                </p>
+
+                <div class="space-y-2 mb-6 text-xs text-zinc-400">
+                  <div class="flex items-start gap-2">
+                    <span class="text-gold-primary font-bold">✓</span>
+                    <span>Calculates simple interest, compound interest, and cumulative investment returns.</span>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <span class="text-gold-primary font-bold">✓</span>
+                    <span>Real-time interactive slider controls and synchronized input fields with zero page refresh.</span>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <span class="text-gold-primary font-bold">✓</span>
+                    <span>Visual breakdown distinguishing principal capital from cumulative interest yield.</span>
+                  </div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 mb-8">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">JavaScript (ES6+)</span>
+                  <span class="tech-tag">FinTech Math</span>
+                  <span class="tech-tag">Interactive UI</span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                <button class="open-project-detail-btn btn-gold-primary text-xs py-2.5 px-4" data-project="interest_calc">
+                  <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+                  <span>Architecture Deep Dive</span>
+                </button>
+                <a href="https://github.com/yaswanthkumaryejarla" target="_blank" rel="noopener noreferrer" class="btn-gold-outline text-xs py-2.5 px-4">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                  <span>GitHub Profile</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 5: PERSONAL PORTFOLIO WEBSITES -->
+        <div class="project-card-3d-wrapper project-card-filter-item reveal-on-scroll" data-category="web-dev">
+          <div class="project-card-3d">
+            <div class="card-shine"></div>
+            <div class="project-card-content flex flex-col justify-between h-full">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="px-3 py-1 rounded-full text-[11px] font-mono tracking-wider font-semibold bg-gold-primary/10 border border-gold-primary/30 text-gold-bright uppercase">
+                    Web Development
+                  </span>
+                  <div class="flex items-center gap-2">
+                    <a href="https://github.com/yaswanthkumaryejarla" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-300 hover:text-gold-bright hover:border-gold-primary/50 transition-colors" title="GitHub Repository">
+                      <i data-lucide="github" class="w-4 h-4"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <h3 class="font-display font-bold text-2xl text-white mb-2 leading-tight">
+                  Personal Portfolio Websites
+                </h3>
+                <p class="text-gold-champagne font-mono text-xs mb-4">
+                  Technologies: HTML, CSS, JavaScript • Modern UI/UX • GSAP & 3D Tilt
+                </p>
+
+                <p class="text-zinc-300 text-sm leading-relaxed mb-6">
+                  Designing and developing responsive personal portfolio websites with modern UI/UX, professional layouts, animations, and interactive elements.
+                </p>
+
+                <div class="space-y-2 mb-6 text-xs text-zinc-400">
+                  <div class="flex items-start gap-2">
+                    <span class="text-gold-primary font-bold">✓</span>
+                    <span>Executive dark and metallic gold luxury design systems with glassmorphic cards and gold glows.</span>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <span class="text-gold-primary font-bold">✓</span>
+                    <span>Smooth GSAP scroll animations, active scrollspy navigation, and subtle audio haptics.</span>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <span class="text-gold-primary font-bold">✓</span>
+                    <span>3D interactive perspective card tilt with dynamic specular sheen and custom particle canvas.</span>
+                  </div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 mb-8">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">GSAP</span>
+                  <span class="tech-tag">3D Transforms</span>
+                  <span class="tech-tag">UI/UX Design</span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                <button class="open-project-detail-btn btn-gold-primary text-xs py-2.5 px-4" data-project="portfolio_suites">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                  <span>Architecture Deep Dive</span>
+                </button>
+                <a href="https://github.com/yaswanthkumaryejarla" target="_blank" rel="noopener noreferrer" class="btn-gold-outline text-xs py-2.5 px-4">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                  <span>GitHub Profile</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 6: MINDWELL AI (Final Year Capstone) -->
+        <div class="project-card-3d-wrapper project-card-filter-item reveal-on-scroll" data-category="ai">
+          <div class="project-card-3d">
+            <div class="card-shine"></div>
+            <div class="project-card-content flex flex-col justify-between h-full">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="px-3 py-1 rounded-full text-[11px] font-mono tracking-wider font-semibold bg-gold-primary/10 border border-gold-primary/30 text-gold-bright uppercase">
+                    AI & Deep Learning (Final Year Capstone)
+                  </span>
+                  <div class="flex items-center gap-2">
+                    <a href="https://github.com/yaswanthkumaryejarla" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-300 hover:text-gold-bright hover:border-gold-primary/50 transition-colors" title="GitHub Repository">
+                      <i data-lucide="github" class="w-4 h-4"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <h3 class="font-display font-bold text-2xl text-white mb-2 leading-tight">
+                  Using AI to Predict Mental Wellness Issues in Youth
+                </h3>
+                <p class="text-gold-champagne font-mono text-xs mb-4">
+                  DNN • LSTM Sequential Networks • Support Vector Machine (SVM) • Real-Time NLP
+                </p>
+
+                <p class="text-zinc-300 text-sm leading-relaxed mb-6">
+                  Designed and implemented a comprehensive AI framework to detect potential mental wellness issues among youth based on social media usage patterns. Integrated a real-time conversational system to provide basic emotional support.
+                </p>
+
+                <div class="space-y-2 mb-6 text-xs text-zinc-400">
+                  <div class="flex items-start gap-2">
+                    <span class="text-gold-primary font-bold">✓</span>
+                    <span>Multi-model classification combining <strong>DNN</strong>, <strong>LSTM</strong>, and <strong>SVM</strong>.</span>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <span class="text-gold-primary font-bold">✓</span>
+                    <span>End-to-end <strong>Natural Language Processing (NLP)</strong> for text preprocessing, sentiment analysis, and behavioral feature extraction.</span>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <span class="text-gold-primary font-bold">✓</span>
+                    <span>Real-time conversational system enabling instantaneous supportive interaction.</span>
+                  </div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 mb-8">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">LSTM</span>
+                  <span class="tech-tag">Deep Neural Networks</span>
+                  <span class="tech-tag">SVM</span>
+                  <span class="tech-tag">NLP (NLTK)</span>
+                  <span class="tech-tag">Sentiment Analysis</span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                <button class="open-project-detail-btn btn-gold-primary text-xs py-2.5 px-4" data-project="mindwell">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                  <span>Architecture Deep Dive</span>
+                </button>
+                <a href="#interactive-nlp-playground" class="btn-gold-outline text-xs py-2.5 px-4">
+                  <i data-lucide="play" class="w-3.5 h-3.5"></i>
+                  <span>Launch Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 7: WINE QUALITY EDA (Minor Project) -->
+        <div class="project-card-3d-wrapper project-card-filter-item reveal-on-scroll" data-category="data-apps">
+          <div class="project-card-3d">
+            <div class="card-shine"></div>
+            <div class="project-card-content flex flex-col justify-between h-full">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="px-3 py-1 rounded-full text-[11px] font-mono tracking-wider font-semibold bg-gold-primary/10 border border-gold-primary/30 text-gold-bright uppercase">
+                    Data Science & Analytics (Minor Project)
+                  </span>
+                  <div class="flex items-center gap-2">
+                    <a href="https://github.com/yaswanthkumaryejarla" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-300 hover:text-gold-bright hover:border-gold-primary/50 transition-colors" title="GitHub Repository">
+                      <i data-lucide="github" class="w-4 h-4"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <h3 class="font-display font-bold text-2xl text-white mb-2 leading-tight">
+                  Wine Quality Exploratory Data Analysis & Analytics
+                </h3>
+                <p class="text-gold-champagne font-mono text-xs mb-4">
+                  Statistical EDA • Automated Correlation • Seaborn & Matplotlib Visualization
+                </p>
+
+                <p class="text-zinc-300 text-sm leading-relaxed mb-6">
+                  Performed Exploratory Data Analysis (EDA) on the Wine Quality dataset using Python (Pandas, NumPy) to understand data structure and key features. Applied data cleaning and created insightful visualizations.
+                </p>
+
+                <div class="space-y-2 mb-6 text-xs text-zinc-400">
+                  <div class="flex items-start gap-2">
+                    <span class="text-gold-primary font-bold">✓</span>
+                    <span>Applied data cleaning and preprocessing techniques, handling missing values, duplicates, and data consistency.</span>
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <span class="text-gold-primary font-bold">✓</span>
+                    <span>Created insightful visualizations using <strong>Seaborn and Matplotlib</strong> (histograms, pairplots, distribution plots).</span>
+                  </div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 mb-8">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">Pandas</span>
+                  <span class="tech-tag">NumPy</span>
+                  <span class="tech-tag">Seaborn</span>
+                  <span class="tech-tag">Matplotlib</span>
+                  <span class="tech-tag">EDA</span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                <button class="open-project-detail-btn btn-gold-primary text-xs py-2.5 px-4" data-project="vinometric">
+                  <i data-lucide="file-spreadsheet" class="w-3.5 h-3.5"></i>
+                  <span>EDA Pipeline Schema</span>
+                </button>
+                <a href="https://github.com/yaswanthkumaryejarla" target="_blank" rel="noopener noreferrer" class="btn-gold-outline text-xs py-2.5 px-4">
+                  <i data-lucide="github" class="w-3.5 h-3.5"></i>
+                  <span>GitHub Profile</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ======================================================================
+           LIVE INTERACTIVE AI PLAYGROUND (MindWell AI Neural Simulator)
+           ====================================================================== -->
+      <div id="interactive-nlp-playground" class="nlp-playground-container reveal-on-scroll">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-gold-primary/20">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs font-mono text-gold-champagne uppercase tracking-wider mb-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              <span>Live Interactive Neural Demonstration</span>
+            </div>
+            <h3 class="font-display font-bold text-2xl text-white">MindWell AI: Real-Time Sentiment & Wellness Pipeline</h3>
+            <p class="text-zinc-400 text-xs">Test the real-time NLP tokenization, DNN/LSTM ensemble classification, and supportive conversational engine.</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono text-zinc-400">STATUS:</span>
+            <span class="px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-xs font-mono">NEURAL MODEL INLINE</span>
+          </div>
+        </div>
+
+        <!-- Sample Presets -->
+        <div class="mb-4">
+          <span class="text-xs font-mono text-zinc-400 block mb-2">QUICK TEST PRESETS (Click to test):</span>
+          <div class="flex flex-wrap gap-2">
+            <button class="nlp-preset-chip px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-700 hover:border-gold-primary text-xs text-zinc-300 transition-colors" data-text="Feeling overwhelmed with semester exams and isolated with continuous deadlines lately.">
+              ⚠️ "Feeling overwhelmed with exams..."
+            </button>
+            <button class="nlp-preset-chip px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-700 hover:border-gold-primary text-xs text-zinc-300 transition-colors" data-text="Super energized and motivated today after successfully training our deep neural network with 96% accuracy!">
+              🚀 "Super energized and motivated..."
+            </button>
+            <button class="nlp-preset-chip px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-700 hover:border-gold-primary text-xs text-zinc-300 transition-colors" data-text="Reviewing our latest dataset distributions and working on feature extraction for our model.">
+              📊 "Reviewing dataset distributions..."
+            </button>
+          </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="mb-6">
+          <textarea id="nlp-demo-input" class="nlp-input-field" placeholder="Type any sentence here to evaluate emotional valence, stress markers, and trigger the conversational support engine...">Feeling overwhelmed with semester exams and isolated with continuous deadlines lately.</textarea>
+          <div class="flex justify-end mt-3">
+            <button id="nlp-demo-analyze-btn" class="btn-gold-primary text-xs">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+              <span>Run NLP Analysis</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Output Metric Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-5 rounded-xl bg-black/40 border border-gold-primary/20 mb-6">
+          <div class="p-3 bg-zinc-900/60 rounded-lg border border-white/5">
+            <span class="text-[11px] font-mono text-zinc-500 block uppercase">Sentiment Polarity</span>
+            <div id="nlp-polarity-score" class="text-2xl font-mono font-bold text-rose-400 mt-1">-0.68</div>
+            <span class="text-[10px] text-zinc-500">Range: -1.0 to +1.0</span>
+          </div>
+
+          <div class="p-3 bg-zinc-900/60 rounded-lg border border-white/5">
+            <span class="text-[11px] font-mono text-zinc-500 block uppercase">Wellness Assessment</span>
+            <div class="mt-2">
+              <span id="nlp-wellness-badge" class="px-2.5 py-1 rounded-full text-xs font-semibold border bg-rose-950 text-rose-300 border-rose-500/50">Emotional Strain Detected</span>
+            </div>
+          </div>
+
+          <div class="p-3 bg-zinc-900/60 rounded-lg border border-white/5">
+            <span class="text-[11px] font-mono text-zinc-500 block uppercase">DNN Classification</span>
+            <div id="nlp-dnn-prob" class="text-2xl font-mono font-bold text-gold-champagne mt-1">93.4%</div>
+            <span class="text-[10px] text-zinc-500">Confidence Metric</span>
+          </div>
+
+          <div class="p-3 bg-zinc-900/60 rounded-lg border border-white/5">
+            <span class="text-[11px] font-mono text-zinc-500 block uppercase">LSTM Sequence Score</span>
+            <div id="nlp-lstm-prob" class="text-2xl font-mono font-bold text-gold-champagne mt-1">95.1%</div>
+            <span class="text-[10px] text-zinc-500">SVM Hyperplane: <span id="nlp-svm-score" class="text-zinc-300 font-mono">0.84</span></span>
+          </div>
+        </div>
+
+        <!-- Metric Bars -->
+        <div class="space-y-3 mb-6 p-4 rounded-xl bg-zinc-950/60 border border-white/5">
+          <div>
+            <div class="flex justify-between text-xs font-mono text-zinc-400 mb-1">
+              <span>Optimism / Valence Indicator</span>
+              <span class="text-emerald-400">Adaptive</span>
+            </div>
+            <div class="w-full bg-zinc-800 h-2 rounded-full overflow-hidden">
+              <div id="bar-positive" class="bg-emerald-500 h-full transition-all duration-700" style="width: 25%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs font-mono text-zinc-400 mb-1">
+              <span>Cognitive Strain & Workload Index</span>
+              <span class="text-rose-400">High</span>
+            </div>
+            <div class="w-full bg-zinc-800 h-2 rounded-full overflow-hidden">
+              <div id="bar-stress" class="bg-rose-500 h-full transition-all duration-700" style="width: 82%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Extracted Tokens & Conversational Support Response -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch">
+          <div class="md:col-span-5 p-4 rounded-xl bg-zinc-900/50 border border-white/5">
+            <span class="text-xs font-mono text-zinc-400 block mb-2">IDENTIFIED NLP LINGUISTIC FEATURES:</span>
+            <div id="nlp-tokens-container" class="flex flex-wrap gap-1.5">
+              <span class="px-2 py-0.5 rounded text-xs border font-mono bg-rose-950/80 text-rose-300 border-rose-600/40">overwhelmed</span>
+              <span class="px-2 py-0.5 rounded text-xs border font-mono bg-rose-950/80 text-rose-300 border-rose-600/40">exams</span>
+              <span class="px-2 py-0.5 rounded text-xs border font-mono bg-rose-950/80 text-rose-300 border-rose-600/40">isolated</span>
+              <span class="px-2 py-0.5 rounded text-xs border font-mono bg-rose-950/80 text-rose-300 border-rose-600/40">deadlines</span>
+            </div>
+          </div>
+
+          <div class="md:col-span-7 p-4 rounded-xl bg-gold-primary/5 border border-gold-primary/30 flex items-center">
+            <p id="nlp-bot-response" class="text-sm text-zinc-200 italic leading-relaxed">
+              <span class="text-gold-champagne font-semibold mr-1">MindWell Assistant:</span> “I hear how heavy this feels right now. Remember that challenging phases don't define your trajectory. Take a slow breath, break the immediate load into one small action, and remember your well-being comes first.”
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 5: INTERNSHIPS & PROFESSIONAL EXPERIENCE
+         ========================================================================== -->
+    <section id="experience" class="section-wrapper">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>Career Journey</span>
+        </div>
+        <h2 class="section-title">
+          Experience & <span class="text-gold-gradient">Activities</span>
+        </h2>
+        <p class="section-subtitle">
+          Professional engineering internships, content creation, and technical community leadership.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="timeline-stem reveal-on-scroll">
+          
+          <!-- Experience Card 1: CONTENT CREATOR – XMASTERPYHUB -->
+          <div class="relative mb-12">
+            <div class="timeline-node"></div>
+            
+            <div class="gold-card p-8 ml-4">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                <div>
+                  <span class="text-xs font-mono text-gold-champagne uppercase tracking-wider block mb-1">Content Creation & Technical Education</span>
+                  <h3 class="font-display font-bold text-2xl text-white">Content Creator & Founder</h3>
+                  <h4 class="text-lg font-heading font-semibold text-gold-bright mt-0.5">XMasterPyHub <span class="text-zinc-400 font-mono text-sm">(@xmaster_pyhub)</span></h4>
+                </div>
+                <div class="text-left sm:text-right">
+                  <span class="inline-block px-3 py-1 rounded-full text-xs font-mono font-medium bg-zinc-900 border border-gold-primary/40 text-gold-champagne">
+                    2026 – Present • Active Creator
+                  </span>
+                  <span class="block text-zinc-500 text-xs font-mono mt-1">Instagram Community Leadership</span>
+                </div>
+              </div>
+
+              <!-- Profile & Content Creator Card Banner -->
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center mb-6 p-4 rounded-xl bg-zinc-950/70 border border-gold-primary/20">
+                <div class="md:col-span-5 relative group overflow-hidden rounded-xl border border-gold-primary/30">
+                  <img src="assets/images/xmaster-profile.jpg" alt="Yejarla Yaswanth Kumar - Content Creator XMasterPyHub" class="w-full h-auto object-cover rounded-xl transition-transform duration-500 group-hover:scale-105">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3">
+                    <span class="text-xs font-mono text-gold-champagne">@xmaster_pyhub Creator</span>
+                  </div>
+                </div>
+                <div class="md:col-span-7 space-y-2.5 text-sm text-zinc-300">
+                  <p class="font-medium text-white">
+                    Currently creating educational content on Instagram under the brand <strong class="text-gold-bright">XMasterPyHub</strong>.
+                  </p>
+                  <p class="text-xs text-zinc-400 leading-relaxed">
+                    Dedicated to democratizing computer science education by helping students who cannot afford expensive courses gain completely free access to curated engineering resources, roadmaps, and career opportunities.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Responsibilities from Prompt -->
+              <h5 class="text-xs font-mono text-gold-champagne uppercase tracking-wider mb-3">Core Responsibilities & Initiatives</h5>
+              <div class="space-y-2.5 mb-6 text-sm text-zinc-300">
+                <div class="flex items-start gap-2.5">
+                  <span class="text-gold-primary font-bold mt-0.5">✦</span>
+                  <p>Creating programming educational content and intuitive <strong>picture notes</strong> that simplify complex computer science concepts.</p>
+                </div>
+                <div class="flex items-start gap-2.5">
+                  <span class="text-gold-primary font-bold mt-0.5">✦</span>
+                  <p>Sharing <strong>free learning resources</strong> and comprehensive study guides for engineering students across universities.</p>
+                </div>
+                <div class="flex items-start gap-2.5">
+                  <span class="text-gold-primary font-bold mt-0.5">✦</span>
+                  <p>Publishing high-yield materials across <strong>Python, SQL, DSA, AI/ML</strong>, and <strong>web development</strong>.</p>
+                </div>
+                <div class="flex items-start gap-2.5">
+                  <span class="text-gold-primary font-bold mt-0.5">✦</span>
+                  <p>Broadcasting verified <strong>job notifications</strong> and software engineering career opportunities.</p>
+                </div>
+                <div class="flex items-start gap-2.5">
+                  <span class="text-gold-primary font-bold mt-0.5">✦</span>
+                  <p>Developing step-by-step <strong>roadmaps, study materials</strong>, and <strong>interview preparation content</strong>.</p>
+                </div>
+                <div class="flex items-start gap-2.5">
+                  <span class="text-gold-primary font-bold mt-0.5">✦</span>
+                  <p>Helping students who cannot afford expensive courses access <strong>free, high-quality educational resources</strong>.</p>
+                </div>
+              </div>
+
+              <!-- Badges matching the graphic -->
+              <div class="mb-6">
+                <span class="text-[11px] font-mono text-zinc-400 block uppercase mb-2">Resource Categories Provided:</span>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-zinc-900 border border-zinc-700 text-zinc-300">📖 Providing Materials</span>
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-zinc-900 border border-zinc-700 text-zinc-300">🖼️ Picture Notes</span>
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-zinc-900 border border-zinc-700 text-zinc-300">🔔 Job Notifications</span>
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-zinc-900 border border-zinc-700 text-zinc-300">📚 R20 Regulation Notes</span>
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-zinc-900 border border-zinc-700 text-zinc-300">🎓 BTech Materials</span>
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-zinc-900 border border-zinc-700 text-zinc-300">📖 Hand Books</span>
+                  <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-zinc-900 border border-zinc-700 text-zinc-300">📽️ PPT Slides</span>
+                </div>
+              </div>
+
+              <!-- Action Link -->
+              <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
+                <span class="text-xs font-mono text-zinc-400">Join the learning community on Instagram</span>
+                <a href="https://instagram.com/xmaster_pyhub" target="_blank" rel="noopener noreferrer" class="btn-gold-primary text-xs py-2 px-4">
+                  <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+                  <span>Visit @xmaster_pyhub</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience Card 2: CODTECH IT SOLUTIONS -->
+          <div class="relative mb-12">
+            <div class="timeline-node"></div>
+            
+            <div class="gold-card p-8 ml-4">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                <div>
+                  <span class="text-xs font-mono text-gold-champagne uppercase tracking-wider block mb-1">Internship Program</span>
+                  <h3 class="font-display font-bold text-2xl text-white">Python Programming Intern</h3>
+                  <h4 class="text-lg font-heading font-semibold text-gold-bright mt-0.5">CODTECH IT SOLUTIONS</h4>
+                </div>
+                <div class="text-left sm:text-right">
+                  <span class="inline-block px-3 py-1 rounded-full text-xs font-mono font-medium bg-zinc-900 border border-gold-primary/40 text-gold-champagne">
+                    Dec 2024 – Jan 2025
+                  </span>
+                  <span class="block text-zinc-500 text-xs font-mono mt-1">2-Month Full Immersion</span>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-xl bg-zinc-950/60 border border-white/5 mb-6 text-sm text-zinc-300">
+                <p>
+                  Completed an intensive 2-month internship specializing in <strong class="text-white">Python Programming</strong> with core focus on <strong class="text-gold-bright">Workflow Automation</strong> and <strong class="text-gold-bright">NLP-based Intelligent Applications</strong>.
+                </p>
+              </div>
+
+              <!-- Bullet Points from Resume -->
+              <div class="space-y-3 mb-6">
+                <div class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-gold-primary/20 text-gold-champagne flex items-center justify-center text-xs mt-0.5">✦</span>
+                  <p class="text-zinc-300 text-sm leading-relaxed">
+                    Applied Python engineering principles to architect resilient <strong>automation scripts</strong> and <strong>conversational chatbot functionalities</strong>.
+                  </p>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-gold-primary/20 text-gold-champagne flex items-center justify-center text-xs mt-0.5">✦</span>
+                  <p class="text-zinc-300 text-sm leading-relaxed">
+                    Leveraged specialized computational libraries such as <strong>NLTK, Pandas, and NumPy</strong> for extensive textual tokenization, sentiment matrices, and exploratory dataset transformations.
+                  </p>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <span class="w-5 h-5 rounded-full bg-gold-primary/20 text-gold-champagne flex items-center justify-center text-xs mt-0.5">✦</span>
+                  <p class="text-zinc-300 text-sm leading-relaxed">
+                    Strengthened technical capabilities in <strong>workflow automation</strong> and <strong>intelligent system development</strong>, translating operational requirements into automated code.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Stack Tags & Certificate Link -->
+              <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/10">
+                <div class="flex flex-wrap gap-2">
+                  <span class="tech-tag">Python</span>
+                  <span class="tech-tag">NLTK</span>
+                  <span class="tech-tag">Pandas</span>
+                  <span class="tech-tag">NumPy</span>
+                  <span class="tech-tag">Workflow Automation</span>
+                  <span class="tech-tag">Chatbot Architecture</span>
+                </div>
+
+                <button class="open-certificate-modal-btn btn-gold-outline text-xs py-2 px-3.5" data-cert-title="Python Programming Internship Certification" data-cert-org="Codtech IT Solutions" data-cert-date="Dec 2024 – Jan 2025">
+                  <i data-lucide="award" class="w-3.5 h-3.5"></i>
+                  <span>View Verified Certificate</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Academic Research & Practical Milestones Node -->
+          <div class="relative">
+            <div class="timeline-node"></div>
+            
+            <div class="gold-card p-8 ml-4">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                <div>
+                  <span class="text-xs font-mono text-gold-champagne uppercase tracking-wider block mb-1">Academic & Technical Projects</span>
+                  <h3 class="font-display font-bold text-2xl text-white">Undergraduate Engineering Researcher</h3>
+                  <h4 class="text-lg font-heading font-semibold text-zinc-300 mt-0.5">Dr Paul Raj Engineering College (JNTUK)</h4>
+                </div>
+                <div>
+                  <span class="inline-block px-3 py-1 rounded-full text-xs font-mono font-medium bg-zinc-900 border border-white/10 text-zinc-400">
+                    2022 – 2026
+                  </span>
+                </div>
+              </div>
+
+              <p class="text-zinc-300 text-sm leading-relaxed mb-4">
+                Led architectural formulation for AI capstone projects, conducting extensive research into deep neural network topologies (DNN, LSTM, CNN), support vector classification, and automated correlation engines.
+              </p>
+
+              <div class="flex flex-wrap gap-2">
+                <span class="tech-tag">Deep Learning</span>
+                <span class="tech-tag">Machine Learning</span>
+                <span class="tech-tag">DBMS</span>
+                <span class="tech-tag">Operating Systems</span>
+                <span class="tech-tag">Computer Networks</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 6: CERTIFICATIONS & ACHIEVEMENTS
+         ========================================================================== -->
+    <section id="certifications" class="section-wrapper">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>Credentials & Accolades</span>
+        </div>
+        <h2 class="section-title">
+          Certifications & <span class="text-gold-gradient">Achievements</span>
+        </h2>
+        <p class="section-subtitle">
+          Nationwide technical assessment honors, verified certifications, and competition achievements.
+        </p>
+      </div>
+
+      <!-- High-Impact Achievements Row -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 reveal-on-scroll">
+        
+        <!-- Achievement 1: Naukri Young Turks -->
+        <div class="gold-card p-6 border-gold-primary/40 relative overflow-hidden">
+          <div class="absolute -right-6 -bottom-6 w-28 h-28 bg-gold-primary/10 rounded-full blur-xl pointer-events-none"></div>
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-primary/30 to-amber-700/20 border border-gold-primary flex items-center justify-center text-gold-bright mb-4 text-xl">
+            <i data-lucide="trophy" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-mono text-gold-champagne uppercase tracking-wider block mb-1">National Benchmark</span>
+          <h3 class="font-display font-bold text-xl text-white mb-2">95.52 Percentile</h3>
+          <h4 class="text-sm font-semibold text-gold-bright mb-2">Naukri Campus Young Turks 2025</h4>
+          <p class="text-zinc-400 text-xs leading-relaxed">
+            Recognized among top nationwide performers in competitive software engineering, algorithmic logic, and technical competency assessments.
+          </p>
+        </div>
+
+        <!-- Achievement 2: Common Internship Test -->
+        <div class="gold-card p-6 border-gold-primary/40 relative overflow-hidden">
+          <div class="absolute -right-6 -bottom-6 w-28 h-28 bg-gold-primary/10 rounded-full blur-xl pointer-events-none"></div>
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-primary/30 to-amber-700/20 border border-gold-primary flex items-center justify-center text-gold-bright mb-4 text-xl">
+            <i data-lucide="medal" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-mono text-gold-champagne uppercase tracking-wider block mb-1">Competitive Ranking</span>
+          <h3 class="font-display font-bold text-xl text-white mb-2">Rank 906 Nationwide</h3>
+          <h4 class="text-sm font-semibold text-gold-bright mb-2">Common Internship Test (CIT)</h4>
+          <p class="text-zinc-400 text-xs leading-relaxed">
+            Secured an All-India Rank of 906, demonstrating superior programming foundations and high performance among thousands of engineering candidates.
+          </p>
+        </div>
+
+        <!-- Achievement 3: Consistent Academic & Internship Performance -->
+        <div class="gold-card p-6 border-gold-primary/40 relative overflow-hidden">
+          <div class="absolute -right-6 -bottom-6 w-28 h-28 bg-gold-primary/10 rounded-full blur-xl pointer-events-none"></div>
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-primary/30 to-amber-700/20 border border-gold-primary flex items-center justify-center text-gold-bright mb-4 text-xl">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <span class="text-xs font-mono text-gold-champagne uppercase tracking-wider block mb-1">Distinction</span>
+          <h3 class="font-display font-bold text-xl text-white mb-2">Consistently Recognized</h3>
+          <h4 class="text-sm font-semibold text-gold-bright mb-2">Internship & Academic Excellence</h4>
+          <p class="text-zinc-400 text-xs leading-relaxed">
+            Recognized for steady execution, disciplined problem-solving, and active contribution during internship deliverables and academic engineering projects.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Certifications Grid -->
+      <h3 class="font-display text-xl font-bold text-white mb-6 flex items-center gap-2 reveal-on-scroll">
+        <span class="text-gold-champagne">✦</span>
+        <span>Verified Industry Certifications</span>
+      </h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal-on-scroll">
+        
+        <!-- Cert 1: Pan India Hackathon -->
+        <div class="gold-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[11px] font-mono text-gold-champagne uppercase tracking-wider">Competition</span>
+              <span class="text-xs font-mono text-zinc-400">March 2025</span>
+            </div>
+            <h4 class="font-heading font-bold text-lg text-white mb-1">Pan India Hackathon</h4>
+            <p class="text-gold-bright text-xs font-medium mb-3">Codtech IT Solutions</p>
+            <p class="text-zinc-400 text-xs leading-relaxed mb-4">
+              Demonstrated collaborative problem-solving, rapid prototyping, and software engineering capabilities under competitive hackathon timelines.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-emerald-400 text-xs font-mono flex items-center gap-1.5">
+              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Verified Credential
+            </span>
+            <button class="open-certificate-modal-btn text-xs font-mono text-gold-champagne hover:underline" data-cert-title="Pan India Hackathon" data-cert-org="Codtech IT Solutions" data-cert-date="March 2025">
+              View Certificate
+            </button>
+          </div>
+        </div>
+
+        <!-- Cert 2: Artificial Intelligence -->
+        <div class="gold-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[11px] font-mono text-gold-champagne uppercase tracking-wider">Specialization</span>
+              <span class="text-xs font-mono text-zinc-400">March 2024</span>
+            </div>
+            <h4 class="font-heading font-bold text-lg text-white mb-1">Artificial Intelligence</h4>
+            <p class="text-gold-bright text-xs font-medium mb-3">Programming Hub</p>
+            <p class="text-zinc-400 text-xs leading-relaxed mb-4">
+              Comprehensive certification covering intelligent agent design, search algorithms, heuristic evaluation, and foundational machine learning.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-emerald-400 text-xs font-mono flex items-center gap-1.5">
+              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Verified Credential
+            </span>
+            <button class="open-certificate-modal-btn text-xs font-mono text-gold-champagne hover:underline" data-cert-title="Artificial Intelligence" data-cert-org="Programming Hub" data-cert-date="March 2024">
+              View Certificate
+            </button>
+          </div>
+        </div>
+
+        <!-- Cert 3: Fundamentals of Computer Science -->
+        <div class="gold-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[11px] font-mono text-gold-champagne uppercase tracking-wider">Core Theory</span>
+              <span class="text-xs font-mono text-zinc-400">April 2024</span>
+            </div>
+            <h4 class="font-heading font-bold text-lg text-white mb-1">Fundamentals of Computer Science</h4>
+            <p class="text-gold-bright text-xs font-medium mb-3">Programming Hub</p>
+            <p class="text-zinc-400 text-xs leading-relaxed mb-4">
+              Rigorous grounding in data structures, algorithmic complexity (Big-O), memory layout, and computational abstraction.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-emerald-400 text-xs font-mono flex items-center gap-1.5">
+              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Verified Credential
+            </span>
+            <button class="open-certificate-modal-btn text-xs font-mono text-gold-champagne hover:underline" data-cert-title="Fundamentals of Computer Science" data-cert-org="Programming Hub" data-cert-date="April 2024">
+              View Certificate
+            </button>
+          </div>
+        </div>
+
+        <!-- Cert 4: Python Programming (Guvi Google Partner) -->
+        <div class="gold-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-[11px] font-mono text-gold-champagne uppercase tracking-wider">Software Engineering</span>
+              <span class="text-xs font-mono text-zinc-400">May 2024</span>
+            </div>
+            <h4 class="font-heading font-bold text-lg text-white mb-1">Python Programming</h4>
+            <p class="text-gold-bright text-xs font-medium mb-3">Guvi (Google for Education Partner)</p>
+            <p class="text-zinc-400 text-xs leading-relaxed mb-4">
+              Advanced Python paradigms, functional structures, data handling, modules, file I/O, and algorithmic efficiency.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-emerald-400 text-xs font-mono flex items-center gap-1.5">
+              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Verified Credential
+            </span>
+            <button class="open-certificate-modal-btn text-xs font-mono text-gold-champagne hover:underline" data-cert-title="Python Programming" data-cert-org="Guvi (Google Partner)" data-cert-date="May 2024">
+              View Certificate
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 7: EDUCATION
+         ========================================================================== -->
+    <section id="education" class="section-wrapper">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>Academic Foundation</span>
+        </div>
+        <h2 class="section-title">
+          Formal <span class="text-gold-gradient">Education</span>
+        </h2>
+        <p class="section-subtitle">
+          Bachelor of Technology in Computer Science and Engineering with continuous focus on foundational CS principles.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto reveal-on-scroll">
+        <div class="gold-card p-8 md:p-10 relative overflow-hidden border-gold-primary/30">
+          <div class="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8">
+            <div>
+              <span class="text-xs font-mono text-gold-champagne uppercase tracking-wider block mb-2">Graduating Class of 2026</span>
+              <h3 class="font-display font-bold text-2xl md:text-3xl text-white mb-1">
+                Bachelor of Technology (B.Tech)
+              </h3>
+              <h4 class="text-lg font-heading font-semibold text-gold-bright mb-2">
+                Computer Science and Engineering
+              </h4>
+              <p class="text-zinc-300 text-sm">
+                Dr Paul Raj Engineering College <span class="text-zinc-500">•</span> Affiliated with <strong class="text-white">Jawaharlal Nehru Technological University Kakinada (JNTUK)</strong>
+              </p>
+            </div>
+
+            <div class="flex flex-col items-start md:items-end">
+              <div class="p-4 rounded-xl bg-gold-primary/10 border border-gold-primary/30 text-center">
+                <span class="text-xs font-mono text-zinc-400 uppercase block">Cumulative Grade</span>
+                <span class="text-3xl font-mono font-bold text-gold-bright">7.4 <span class="text-xs text-zinc-400 font-normal">/ 10 CGPA</span></span>
+              </div>
+              <span class="text-xs font-mono text-zinc-500 mt-2">Duration: 2022 – 2026</span>
+            </div>
+          </div>
+
+          <!-- Coursework Deep Dive from Resume -->
+          <div class="pt-6 border-t border-white/10">
+            <h4 class="font-heading font-bold text-sm text-gold-champagne uppercase tracking-wider mb-4">
+              Core Academic Coursework & Specializations
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+              
+              <div class="p-3 rounded-lg bg-zinc-950/60 border border-white/5 flex items-center gap-3">
+                <i data-lucide="cpu" class="w-4 h-4 text-gold-primary flex-shrink-0"></i>
+                <div>
+                  <span class="text-xs font-medium text-white block">Operating Systems</span>
+                  <span class="text-[10px] text-zinc-500">Concurrency, Memory, Schedulers</span>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-lg bg-zinc-950/60 border border-white/5 flex items-center gap-3">
+                <i data-lucide="database" class="w-4 h-4 text-gold-primary flex-shrink-0"></i>
+                <div>
+                  <span class="text-xs font-medium text-white block">Database Systems (DBMS)</span>
+                  <span class="text-[10px] text-zinc-500">Relational Models, SQL, Transactions</span>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-lg bg-zinc-950/60 border border-white/5 flex items-center gap-3">
+                <i data-lucide="network" class="w-4 h-4 text-gold-primary flex-shrink-0"></i>
+                <div>
+                  <span class="text-xs font-medium text-white block">Computer Networks</span>
+                  <span class="text-[10px] text-zinc-500">TCP/IP, Routing, Protocols</span>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-lg bg-zinc-950/60 border border-white/5 flex items-center gap-3">
+                <i data-lucide="sparkles" class="w-4 h-4 text-gold-primary flex-shrink-0"></i>
+                <div>
+                  <span class="text-xs font-medium text-white block">AI & Machine Learning</span>
+                  <span class="text-[10px] text-zinc-500">Supervised, Unsupervised, Neural Nets</span>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-lg bg-zinc-950/60 border border-white/5 flex items-center gap-3">
+                <i data-lucide="code" class="w-4 h-4 text-gold-primary flex-shrink-0"></i>
+                <div>
+                  <span class="text-xs font-medium text-white block">Software Engineering</span>
+                  <span class="text-[10px] text-zinc-500">SDLC, Clean Architecture, Testing</span>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-lg bg-zinc-950/60 border border-white/5 flex items-center gap-3">
+                <i data-lucide="terminal" class="w-4 h-4 text-gold-primary flex-shrink-0"></i>
+                <div>
+                  <span class="text-xs font-medium text-white block">Data Structures & Algorithms</span>
+                  <span class="text-[10px] text-zinc-500">Trees, Graphs, Time Complexity</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 8: CONTACT & DIRECT TRANSMISSION
+         ========================================================================== -->
+    <section id="contact" class="section-wrapper">
+      <div class="section-header reveal-on-scroll">
+        <div class="section-badge">
+          <span class="badge-dot"></span>
+          <span>Initiate Transmission</span>
+        </div>
+        <h2 class="section-title">
+          Let's Build Something <span class="text-gold-gradient">Extraordinary</span>
+        </h2>
+        <p class="section-subtitle">
+          Seeking full-time roles, engineering internships, and impactful AI/ML projects. My channels are continuously open.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: Direct Contact Channels -->
+        <div class="lg:col-span-5 space-y-4 reveal-on-scroll">
+          
+          <!-- Email Card -->
+          <div class="gold-card p-6 flex items-start justify-between gap-4">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gold-primary/10 border border-gold-primary/30 flex items-center justify-center text-gold-champagne flex-shrink-0">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-xs font-mono text-zinc-400 block uppercase">Email Address</span>
+                <a href="mailto:yaswanthkumaryejarla@gmail.com" class="text-white hover:text-gold-bright font-medium text-sm break-all">
+                  yaswanthkumaryejarla@gmail.com
+                </a>
+                <span class="block text-[11px] text-zinc-500 mt-1">Guaranteed response within 24 hours</span>
+              </div>
+            </div>
+            <button class="copy-trigger-btn p-2 rounded-lg bg-white/5 hover:bg-gold-primary/20 text-gold-champagne transition-colors" data-copy="yaswanthkumaryejarla@gmail.com" title="Copy Email">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <!-- Phone Card -->
+          <div class="gold-card p-6 flex items-start justify-between gap-4">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gold-primary/10 border border-gold-primary/30 flex items-center justify-center text-gold-champagne flex-shrink-0">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-xs font-mono text-zinc-400 block uppercase">Direct Phone</span>
+                <a href="tel:+919701148072" class="text-white hover:text-gold-bright font-medium text-sm">
+                  +91 9701148072
+                </a>
+                <span class="block text-[11px] text-zinc-500 mt-1">Voice & WhatsApp Available</span>
+              </div>
+            </div>
+            <button class="copy-trigger-btn p-2 rounded-lg bg-white/5 hover:bg-gold-primary/20 text-gold-champagne transition-colors" data-copy="+919701148072" title="Copy Phone">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <!-- LinkedIn & GitHub Cards -->
+          <div class="grid grid-cols-2 gap-4">
+            <a href="https://linkedin.com/in/yaswanthkumaryejarla" target="_blank" rel="noopener noreferrer" class="gold-card p-5 block group">
+              <div class="flex items-center justify-between mb-3">
+                <i data-lucide="linkedin" class="w-6 h-6 text-gold-primary group-hover:scale-110 transition-transform"></i>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500 group-hover:text-gold-bright transition-colors"></i>
+              </div>
+              <span class="text-xs font-mono text-zinc-400 block">LinkedIn</span>
+              <span class="text-sm font-semibold text-white group-hover:text-gold-bright">Connect Profile</span>
+            </a>
+
+            <a href="https://github.com/yaswanthkumaryejarla" target="_blank" rel="noopener noreferrer" class="gold-card p-5 block group">
+              <div class="flex items-center justify-between mb-3">
+                <i data-lucide="github" class="w-6 h-6 text-gold-primary group-hover:scale-110 transition-transform"></i>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-zinc-500 group-hover:text-gold-bright transition-colors"></i>
+              </div>
+              <span class="text-xs font-mono text-zinc-400 block">GitHub</span>
+              <span class="text-sm font-semibold text-white group-hover:text-gold-bright">Review Code</span>
+            </a>
+          </div>
+
+          <!-- Location Info -->
+          <div class="p-4 rounded-xl bg-zinc-950/60 border border-white/5 flex items-center gap-3 text-xs text-zinc-400">
+            <i data-lucide="map-pin" class="w-4 h-4 text-gold-primary"></i>
+            <span>Andhra Pradesh, India — Open to Onsite, Hybrid & Global Relocation</span>
+          </div>
+
+        </div>
+
+        <!-- Right: Interactive Contact Transmission Form -->
+        <div class="lg:col-span-7 reveal-on-scroll">
+          <div class="gold-card p-8 relative">
+            <h3 class="font-display font-bold text-2xl text-white mb-2">Send a Direct Message</h3>
+            <p class="text-zinc-400 text-xs mb-6">Fill in the fields below. A transmission receipt and direct email option will immediately trigger.</p>
+
+            <form id="portfolio-contact-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="contact-name" class="block text-xs font-mono text-zinc-400 uppercase mb-1">Your Name *</label>
+                  <input type="text" id="contact-name" required class="contact-input" placeholder="e.g. Alex Mercer">
+                </div>
+                <div>
+                  <label for="contact-email" class="block text-xs font-mono text-zinc-400 uppercase mb-1">Your Email *</label>
+                  <input type="email" id="contact-email" required class="contact-input" placeholder="alex@company.com">
+                </div>
+              </div>
+
+              <div>
+                <label for="contact-subject" class="block text-xs font-mono text-zinc-400 uppercase mb-1">Subject / Opportunity</label>
+                <input type="text" id="contact-subject" class="contact-input" placeholder="e.g. AI/ML Engineering Role / Capstone Collaboration">
+              </div>
+
+              <div>
+                <label for="contact-message" class="block text-xs font-mono text-zinc-400 uppercase mb-1">Message *</label>
+                <textarea id="contact-message" rows="5" required class="contact-input resize-none" placeholder="Detail your project requirements, job description, or message..."></textarea>
+              </div>
+
+              <div id="contact-form-status" class="pt-2"></div>
+
+              <div class="pt-2">
+                <button type="submit" id="contact-submit-btn" class="btn-gold-primary w-full py-3.5">
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                  <span>Transmit Transmission</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="border-t border-white/10 bg-black/60 relative z-10 py-12 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      
+      <!-- Brand & Copyright -->
+      <div class="flex items-center gap-3">
+        <div class="nav-logo-monogram w-8 h-8 text-xs">YK</div>
+        <div>
+          <span class="font-display font-bold text-sm text-white tracking-wider block">YEJARLA YASWANTH KUMAR</span>
+          <span class="text-xs text-zinc-500 font-mono">© 2026 • AI/ML Engineer Portfolio • All Rights Reserved</span>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="flex flex-wrap items-center gap-6 text-xs text-zinc-400">
+        <a href="#home" class="hover:text-gold-bright transition-colors">Home</a>
+        <a href="#about" class="hover:text-gold-bright transition-colors">About</a>
+        <a href="#skills" class="hover:text-gold-bright transition-colors">Skills</a>
+        <a href="#projects" class="hover:text-gold-bright transition-colors">Projects</a>
+        <a href="#experience" class="hover:text-gold-bright transition-colors">Experience</a>
+        <a href="#contact" class="hover:text-gold-bright transition-colors">Contact</a>
+      </div>
+
+      <!-- Back to Top Button -->
+      <a href="#home" class="w-10 h-10 rounded-full border border-gold-primary/30 bg-gold-primary/10 flex items-center justify-center text-gold-champagne hover:bg-gold-primary/20 hover:border-gold-champagne transition-all" title="Back to Top">
+        <i data-lucide="arrow-up" class="w-4 h-4"></i>
+      </a>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODAL 1: PROJECT ARCHITECTURE DEEP DIVE MODAL
+       ========================================================================== -->
+  <div id="project-detail-modal" class="portfolio-modal">
+    <div class="portfolio-modal-box">
+      <button class="modal-close-btn" aria-label="Close modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <span id="modal-project-badge" class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-gold-primary/10 border border-gold-primary/30 text-gold-bright uppercase inline-block mb-3">
+        Project Category
+      </span>
+
+      <h2 id="modal-project-title" class="font-display font-bold text-2xl sm:text-3xl text-white mb-1">
+        Project Title
+      </h2>
+      <p id="modal-project-subtitle" class="text-xs font-mono text-gold-champagne mb-6">
+        Subtitle
+      </p>
+
+      <!-- Architecture Block -->
+      <div class="p-4 rounded-xl bg-zinc-950/70 border border-gold-primary/20 mb-6">
+        <span class="text-[11px] font-mono text-zinc-400 uppercase block mb-1">System Architecture Pipeline</span>
+        <p id="modal-project-arch" class="text-sm font-mono text-gold-bright">
+          DNN + LSTM + SVM Pipeline
+        </p>
+      </div>
+
+      <!-- Overview -->
+      <div class="mb-6">
+        <h4 class="font-heading font-bold text-sm text-zinc-300 uppercase tracking-wider mb-2">Overview & Problem Statement</h4>
+        <p id="modal-project-overview" class="text-zinc-300 text-sm leading-relaxed">
+          Overview text...
+        </p>
+      </div>
+
+      <!-- Key Engineering Contributions -->
+      <div class="mb-6">
+        <h4 class="font-heading font-bold text-sm text-zinc-300 uppercase tracking-wider mb-3">Key Technical Contributions</h4>
+        <ul id="modal-project-contributions" class="space-y-2">
+          <!-- Populated dynamically via main.js -->
+        </ul>
+      </div>
+
+      <!-- Tech Stack Badges -->
+      <div class="mb-8">
+        <h4 class="font-heading font-bold text-sm text-zinc-300 uppercase tracking-wider mb-3">Technologies Employed</h4>
+        <div id="modal-project-stack" class="flex flex-wrap gap-2">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <!-- Footer Actions -->
+      <div class="flex items-center justify-between pt-4 border-t border-white/10">
+        <a id="modal-project-github" href="https://github.com/yaswanthkumaryejarla" target="_blank" rel="noopener noreferrer" class="btn-gold-primary text-xs">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>Inspect Repository on GitHub</span>
+        </a>
+        <button class="modal-close-btn-text text-xs font-mono text-zinc-400 hover:text-white modal-close-btn">
+          Dismiss View
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 2: RESUME VIEWER & PRINT/DOWNLOAD MODAL
+       ========================================================================== -->
+  <div id="resume-viewer-modal" class="portfolio-modal">
+    <div class="portfolio-modal-box max-w-4xl bg-[#09090E]">
+      <button class="modal-close-btn" aria-label="Close modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+        <div>
+          <span class="text-xs font-mono text-gold-champagne uppercase tracking-wider block">Official Curriculum Vitae</span>
+          <h2 class="font-display font-bold text-2xl text-white">Yejarla Yaswanth Kumar</h2>
+          <p class="text-xs text-zinc-400">AI/ML Engineer • Dr Paul Raj Engineering College (JNTUK)</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="window.print()" class="btn-gold-primary text-xs py-2 px-3.5">
+            <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+            <span>Print / Save PDF</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Rendered Resume Layout -->
+      <div class="space-y-6 text-sm text-zinc-300">
+        
+        <!-- Header Info -->
+        <div class="p-4 rounded-xl bg-black/40 border border-white/5 flex flex-wrap justify-between gap-2 text-xs font-mono">
+          <div><strong class="text-gold-champagne">Email:</strong> yaswanthkumaryejarla@gmail.com</div>
+          <div><strong class="text-gold-champagne">Phone:</strong> +91 9701148072</div>
+          <div><strong class="text-gold-champagne">LinkedIn:</strong> yaswanthkumaryejarla</div>
+          <div><strong class="text-gold-champagne">GitHub:</strong> yaswanthkumar</div>
+        </div>
+
+        <!-- Profile Summary -->
+        <div>
+          <h3 class="font-heading font-bold text-gold-bright uppercase tracking-wider text-xs border-b border-gold-primary/30 pb-1 mb-2">Profile Summary</h3>
+          <p class="text-xs leading-relaxed text-zinc-300">
+            Passionate AI/ML engineer with expertise in deep learning, computer vision, and natural language processing. Proficient in Python, TensorFlow, and PyTorch, with strong problem-solving and analytical skills. Seeking opportunities to develop innovative AI-driven solutions.
+          </p>
+        </div>
+
+        <!-- Education -->
+        <div>
+          <h3 class="font-heading font-bold text-gold-bright uppercase tracking-wider text-xs border-b border-gold-primary/30 pb-1 mb-2">Education</h3>
+          <div class="flex justify-between items-start text-xs">
+            <div>
+              <strong class="text-white text-sm">Bachelor of Technology, Computer Science and Engineering</strong>
+              <div class="text-zinc-400">Dr Paul Raj Engineering College (JNTUK)</div>
+              <div class="text-[11px] text-zinc-500 mt-0.5">Coursework: Operating Systems, DBMS, Computer Networks, AI/ML, Software Engineering</div>
+            </div>
+            <div class="text-right">
+              <span class="font-mono text-gold-champagne">(2022–2026)</span>
+              <div class="font-mono font-bold text-white">CGPA: 7.4</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Work Experience & Activities -->
+        <div>
+          <h3 class="font-heading font-bold text-gold-bright uppercase tracking-wider text-xs border-b border-gold-primary/30 pb-1 mb-2">Work Experience & Activities</h3>
+          <div class="space-y-3 text-xs">
+            <div>
+              <div class="flex justify-between">
+                <div>
+                  <strong class="text-white text-sm">XMasterPyHub (@xmaster_pyhub)</strong>
+                  <div class="text-gold-champagne font-medium">Content Creator & Technical Educator</div>
+                </div>
+                <span class="font-mono text-zinc-400">2026 – Present</span>
+              </div>
+              <ul class="list-disc list-inside mt-1 space-y-0.5 text-zinc-300 text-xs">
+                <li>Creating programming educational content and picture notes for engineering students.</li>
+                <li>Sharing free learning resources, Python, SQL, DSA, AI/ML and web development materials.</li>
+                <li>Publishing job notifications, roadmaps, B.Tech R20 study materials, and interview prep.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="flex justify-between">
+                <div>
+                  <strong class="text-white text-sm">CODTECH IT SOLUTIONS</strong>
+                  <div class="text-gold-champagne font-medium">Python Programming Intern</div>
+                </div>
+                <span class="font-mono text-zinc-400">Dec 2024 – Jan 2025</span>
+              </div>
+              <ul class="list-disc list-inside mt-1 space-y-0.5 text-zinc-300 text-xs">
+                <li>Completed a 2-month internship in Python Programming with focus on automation and NLP based applications.</li>
+                <li>Applied Python skills to build automation scripts and chatbot functionalities.</li>
+                <li>Worked with libraries such as NLTK, Pandas, and NumPy for data processing and NLP tasks.</li>
+                <li>Strengthened skills in workflow automation and intelligent system development.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div>
+          <h3 class="font-heading font-bold text-gold-bright uppercase tracking-wider text-xs border-b border-gold-primary/30 pb-1 mb-2">Technical Skills</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <div><strong class="text-zinc-200">Programming & Development:</strong> Python (NumPy, Pandas, Seaborn), SQL, HTML/CSS/JS</div>
+            <div><strong class="text-zinc-200">Machine Learning & AI:</strong> Neural Networks (DNN, CNN, RNN), NLP (sentiment analysis, feature extraction), Computer Vision, TensorFlow, PyTorch</div>
+            <div><strong class="text-zinc-200">Data Science & Analytics:</strong> Exploratory Data Analysis (EDA), Correlation automation, Feature engineering</div>
+            <div><strong class="text-zinc-200">Automation & Tools:</strong> Workflow automation, Selenium, GitHub, MS Excel, Word, PowerPoint</div>
+            <div><strong class="text-zinc-200">Soft Skills:</strong> Problem-Solving, Communication, Teamwork, Time Management, Leadership</div>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div>
+          <h3 class="font-heading font-bold text-gold-bright uppercase tracking-wider text-xs border-b border-gold-primary/30 pb-1 mb-2">Key Projects</h3>
+          <div class="space-y-2.5 text-xs">
+            <div>
+              <div class="font-bold text-white text-sm">Coder – Online Coding Web Application <span class="font-normal text-gold-champagne text-xs">(HTML, CSS, JS, Python)</span></div>
+              <p class="text-zinc-300 text-xs">Interactive coding platform designed to help users practice programming, write code, and improve problem-solving skills with a Python backend.</p>
+            </div>
+            <div>
+              <div class="font-bold text-white text-sm">AI Prompt Generator Website <span class="font-normal text-gold-champagne text-xs">(AI / Prompt Engineering)</span></div>
+              <p class="text-zinc-300 text-xs">AI-powered website that helps users generate effective prompts for different AI tools, LLMs, and computational workflows.</p>
+            </div>
+            <div>
+              <div class="font-bold text-white text-sm">XMasterPyHub – Official Website <span class="font-normal text-gold-champagne text-xs">(EdTech Platform)</span></div>
+              <p class="text-zinc-300 text-xs">Educational platform providing free programming resources, B.Tech study materials, picture notes, roadmaps, interview prep, and job notifications.</p>
+            </div>
+            <div>
+              <div class="font-bold text-white text-sm">Premium Interest Calculator Website <span class="font-normal text-gold-champagne text-xs">(FinTech Web App)</span></div>
+              <p class="text-zinc-300 text-xs">Modern interest calculator with an attractive interface that helps users calculate interest, maturity amounts, and financial returns.</p>
+            </div>
+            <div>
+              <div class="font-bold text-white text-sm">Personal Portfolio Websites <span class="font-normal text-gold-champagne text-xs">(HTML, CSS, JavaScript)</span></div>
+              <p class="text-zinc-300 text-xs">Designing and developing responsive personal portfolio websites with modern UI/UX, professional layouts, animations, and interactive elements.</p>
+            </div>
+            <div>
+              <div class="font-bold text-white text-sm">Using AI to Predict Mental Wellness Issues in Youth <span class="font-normal text-gold-champagne text-xs">(Final Year Capstone)</span></div>
+              <p class="text-zinc-300 text-xs">DNN, LSTM, and SVM framework for youth mental wellness prediction with real-time NLP conversational support.</p>
+            </div>
+            <div>
+              <div class="font-bold text-white text-sm">Wine Quality EDA <span class="font-normal text-gold-champagne text-xs">(Minor Project)</span></div>
+              <p class="text-zinc-300 text-xs">Exploratory Data Analysis using Python (Pandas, NumPy, Seaborn, Matplotlib) with automated correlation and data sanitization.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications & Achievements -->
+        <div>
+          <h3 class="font-heading font-bold text-gold-bright uppercase tracking-wider text-xs border-b border-gold-primary/30 pb-1 mb-2">Certifications & Achievements</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+            <div>• Pan India Hackathon - Codtech IT Solutions (Mar 2025)</div>
+            <div>• Artificial Intelligence - Programming Hub (Mar 2024)</div>
+            <div>• Fundamentals of Computer Science - Programming Hub (Apr 2024)</div>
+            <div>• Python Programming - Guvi, Google Partner (May 2024)</div>
+            <div>• 95.52 percentile in Naukri Campus Young Turks 2025 (National Level)</div>
+            <div>• Ranked 906 nationwide in Common Internship Test</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 3: CERTIFICATE PREVIEW MODAL
+       ========================================================================== -->
+  <div id="certificate-viewer-modal" class="portfolio-modal">
+    <div class="portfolio-modal-box max-w-lg text-center">
+      <button class="modal-close-btn" aria-label="Close modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="w-16 h-16 rounded-full bg-gold-primary/20 border-2 border-gold-primary flex items-center justify-center text-gold-bright mx-auto mb-4">
+        <i data-lucide="award" class="w-8 h-8"></i>
+      </div>
+
+      <span class="text-xs font-mono text-gold-champagne uppercase tracking-wider block mb-1">Official Verification</span>
+      <h3 id="cert-modal-title" class="font-display font-bold text-2xl text-white mb-1">Certificate of Completion</h3>
+      <h4 id="cert-modal-org" class="text-gold-bright font-heading text-sm mb-2">Codtech IT Solutions</h4>
+      <p id="cert-modal-date" class="text-xs font-mono text-zinc-400 mb-6">Dec 2024 – Jan 2025</p>
+
+      <div class="p-6 rounded-xl bg-black/60 border border-gold-primary/30 text-left text-xs text-zinc-300 space-y-3 mb-6">
+        <div class="flex justify-between">
+          <span class="text-zinc-500">Recipient:</span>
+          <span class="font-bold text-white">Yejarla Yaswanth Kumar</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-zinc-500">Status:</span>
+          <span class="text-emerald-400 font-mono">Authenticated & Verified</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-zinc-500">Verification ID:</span>
+          <span class="text-gold-champagne font-mono">COD-PY-2025-YK906</span>
+        </div>
+      </div>
+
+      <button class="btn-gold-primary text-xs modal-close-btn w-full">
+        <span>Close Verification Window</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Custom Scripts -->
+  <script src="js/particles.js"></script>
+  <script src="js/tilt.js"></script>
+  <script src="js/nlp-demo.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
