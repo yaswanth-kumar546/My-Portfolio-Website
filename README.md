@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Yejarla Yaswanth Kumar — Executive AI/ML Engineer & Software Developer Portfolio
 
 An executive-tier, cinematic personal portfolio designed for **Yejarla Yaswanth Kumar**, specialized in **Deep Learning**, **Natural Language Processing (NLP)**, **Web Development**, and **Educational Technology Content Creation**.
@@ -119,3 +120,6 @@ Then navigate to `http://localhost:8080`.
 
 - **GitHub Pages**: Push this directory to a GitHub repository, go to **Settings > Pages**, and select `main` branch root.
 - **Vercel / Netlify**: Drag-and-drop the project folder to deploy instantly with zero configuration!
+=======
+# My-Portfolio-Website
+>>>>>>> a91ba558d24927447ac067698a05c63bad434249
